@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.ComponentModel;
 
 var inputFile = File.ReadAllLines("../../../../../inputData/input_01.txt");
 var input = new List<string>(inputFile);
@@ -45,9 +44,40 @@ static void PartOne(List<string> input)
 }
 
 
+static int FindInArray(int[] arrayOne, int[] arrayTwo)
+{
+    var number = 0;
+    foreach (var line in arrayOne)
+    {
+        var count = 0;
+        foreach (var line2 in arrayTwo)
+        {
+            if (line == line2)
+            {
+                count++;
+            }
+        }
 
+        count = line * count;
+        number += count;
+    }
+
+    return number;
+}
+
+static void PartTwo(List<string> input)
+{
+    ArrayList column1 = new ArrayList();
+    ArrayList column2 = new ArrayList();
+    foreach (var line in input)
+    {
+        var row = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+        column1.Add(int.Parse(row[0]));
+        column2.Add(int.Parse(row[1]));
+    }
+    
+    Console.WriteLine(FindInArray((int[])column1.ToArray(typeof(int)), (int[])column2.ToArray(typeof(int))));
+}
 
 PartOne(input);
-
-
-
+PartTwo(input);
