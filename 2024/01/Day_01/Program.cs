@@ -14,14 +14,19 @@ static int GettingTotal(int[] arrayOne, int[] arrayTwo)
     var number = 0;
     for (int i = 0; i < arrayOne.Length; i++)
     {
-        if (arrayOne[i] > arrayTwo[i])
-        {
-            number += arrayOne[i] - arrayTwo[i];
-        }
-        else
-        {
-            number += arrayTwo[i] - arrayOne[i];
-        }
+        // Original
+        // if (arrayOne[i] > arrayTwo[i])
+        // {
+        //     number += arrayOne[i] - arrayTwo[i];
+        // }
+        // else
+        // {
+        //     number += arrayTwo[i] - arrayOne[i];
+        // }
+        
+        // Refactored
+        number += Math.Abs(arrayOne[i] - arrayTwo[i]);
+
     }
 
     return number;
@@ -29,16 +34,20 @@ static int GettingTotal(int[] arrayOne, int[] arrayTwo)
 
 static void PartOne(List<string> input)
 {
-    ArrayList column1 = new ArrayList();
-    ArrayList column2 = new ArrayList();
-    foreach (var line in input)
-    {
-        var row = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
-        column1.Add(int.Parse(row[0]));
-        column2.Add(int.Parse(row[1]));
-    }
+    // Original
+    // ArrayList column1 = new ArrayList();
+    // ArrayList column2 = new ArrayList();
+    // foreach (var line in input)
+    // {
+    //     var row = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+    //     column1.Add(int.Parse(row[0]));
+    //     column2.Add(int.Parse(row[1]));
+    // }
 
-    (int[] sortedColumn1, int[] sortedColumn2) = (SortLowToHigh((int[])column1.ToArray(typeof(int))), SortLowToHigh((int[])column2.ToArray(typeof(int))));
+    // Refactored
+    var (column1, column2) = ParsingArray(input);
+    var sortedColumn1 = SortLowToHigh(column1);
+    var sortedColumn2 = SortLowToHigh(column2);
 
     Console.WriteLine(GettingTotal(sortedColumn1, sortedColumn2));
 }
@@ -67,6 +76,24 @@ static int FindInArray(int[] arrayOne, int[] arrayTwo)
 
 static void PartTwo(List<string> input)
 {
+    // Original
+    // ArrayList column1 = new ArrayList();
+    // ArrayList column2 = new ArrayList();
+    // foreach (var line in input)
+    // {
+    //     var row = line.Split(new char[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+    //     column1.Add(int.Parse(row[0]));
+    //     column2.Add(int.Parse(row[1]));
+    // }
+    
+    // Refactored
+    var (column1, column2) = ParsingArray(input);
+    Console.WriteLine(FindInArray(column1, column2));
+}
+
+// Refactored parsing to int to its own method
+static (int[], int[]) ParsingArray(List<string> input)
+{
     ArrayList column1 = new ArrayList();
     ArrayList column2 = new ArrayList();
     foreach (var line in input)
@@ -75,8 +102,8 @@ static void PartTwo(List<string> input)
         column1.Add(int.Parse(row[0]));
         column2.Add(int.Parse(row[1]));
     }
-    
-    Console.WriteLine(FindInArray((int[])column1.ToArray(typeof(int)), (int[])column2.ToArray(typeof(int))));
+
+    return ((int[])column1.ToArray(typeof(int)), (int[])column2.ToArray(typeof(int)));
 }
 
 PartOne(input);
