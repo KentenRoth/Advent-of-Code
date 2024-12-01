@@ -8,4 +8,4 @@ I rarely make it past the first week or so in Advent of code because I don't use
 
 # 2024
 
-I am going to be attempting Advent of Code this year with C#.  I goal is to work through the problem, get the correct answer, and then refactor.  I will be avoiding the use of copilot until the refacotring portion.  I will use copilot to help refactor, then using what changes to explore different things that I did not know about within the language.
+I am going to be attempting Advent of Code this year with C#.  The goal is to work through the problem, get the correct answer, and then refactor.  I will be avoiding the use of copilot until the refacotring portion.  I will use copilot to help refactor, then using what changes to explore different things that I did not know about within the language.
