@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Runtime.CompilerServices;
 
 var inputFile = File.ReadAllLines("../../../../../inputData/input_01.txt");
 var input = new List<string>(inputFile);
