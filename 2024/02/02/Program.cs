@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.ComponentModel;
 
 var inputFile = File.ReadAllLines("../../../../../inputData/input_02.txt");
 var input = new List<string>(inputFile);
@@ -60,4 +61,66 @@ static void PartOne(List<string> input)
     Console.WriteLine(safe);
 }
 
-PartOne(input);
+static bool IsSafe(List<int> report)
+{
+    if (report.Count < 2)
+    {
+        return true;
+    }
+
+    var firstDiff = report[1] - report[0];
+
+    if (firstDiff == 0 || Math.Abs(firstDiff) > 3)
+    {
+        return false;
+    }
+
+    var expectedSgn = firstDiff / Math.Abs(firstDiff);
+
+    for (int i = 1; i < report.Count - 1; i++)
+    {
+        var diff = report[i + 1] - report[i];
+        if (diff == 0 || Math.Abs(diff) > 3)
+        {
+            return false;
+        }
+
+        var sgn = diff / Math.Abs(diff);
+        if (sgn != expectedSgn)
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+static void PartTwo(List<string> input)
+{
+    var safe = 0;
+    foreach (var line in input)
+    {
+        var report = line.Split(' ', StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToList();
+        if (IsSafe(report))
+        {
+            safe++;
+        }
+        else
+        {
+            for (int i = 0; i < report.Count; i++)
+            {
+                var reportCopy = report.ToList();
+                reportCopy.RemoveAt(i);
+                if (IsSafe(reportCopy))
+                {
+                    safe++;
+                    break;
+                }
+            }
+        }
+    }
+    Console.WriteLine(safe);
+}
+
+
+PartTwo(input);
