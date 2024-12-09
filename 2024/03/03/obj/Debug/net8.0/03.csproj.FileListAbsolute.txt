@@ -1,0 +1,15 @@
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/bin/Debug/net8.0/03
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/bin/Debug/net8.0/03.deps.json
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/bin/Debug/net8.0/03.runtimeconfig.json
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/bin/Debug/net8.0/03.dll
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/bin/Debug/net8.0/03.pdb
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.AssemblyInfoInputs.cache
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.AssemblyInfo.cs
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.csproj.CoreCompileInputs.cache
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.sourcelink.json
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.dll
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/refint/03.dll
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.pdb
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/03.genruntimeconfig.cache
+/Users/kentenroth/Desktop/Kents/git/Advent-of-Code/2024/03/03/obj/Debug/net8.0/ref/03.dll
