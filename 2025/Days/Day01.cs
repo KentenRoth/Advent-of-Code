@@ -59,16 +59,17 @@ namespace _2025.Days
                 int currentSpot = 50;
                 int total = 0;
 
-                for (var i = 0; i < lines.Length; i++)
+                foreach (var line in lines)
                 {
-                    string directionToTurn = lines[i].Substring(0, 1);
+                    char directionToTurn = line[0];
+                    int turningAmount = int.Parse(line.Substring(1)) % 100;
                     switch (directionToTurn)
                     {
-                        case "L":
-                            TurnLeft(lines[i]);
+                        case 'L':
+                            TurnLeft(turningAmount);
                             break;
-                        case "R":
-                            TurnRight(lines[i]);
+                        case 'R':
+                            TurnRight(turningAmount);
                             break;
                         default:
                             Console.WriteLine("Invalid direction");
@@ -76,21 +77,10 @@ namespace _2025.Days
                     }
                 }
 
-                int TurnLeft(string line)
+                int TurnLeft(int turningAmount)
                 {
-                    int numberToTurn;
                         
-                    if (line.Length > 2)
-                    {
-                        numberToTurn = int.Parse(line.Substring(line.Length -2));
-                        currentSpot -= numberToTurn;
-                    }
-                    else
-                    {
-                        numberToTurn = int.Parse(line.Substring(1));
-                        currentSpot -= numberToTurn;
-                    }
-                    
+                    currentSpot -= turningAmount;
                     currentSpot = (currentSpot + 100) % 100;
 
                     if (currentSpot == 0) total++;
@@ -98,20 +88,9 @@ namespace _2025.Days
                     return currentSpot;
                 }
                 
-                int TurnRight(string line)
+                int TurnRight(int turningAmount)
                 {
-                    int numberToTurn;
-                    
-                    if (line.Length > 2)
-                    {
-                        numberToTurn = int.Parse(line.Substring(line.Length -2));
-                        currentSpot += numberToTurn;
-                    }
-                    else
-                    {
-                        numberToTurn = int.Parse(line.Substring(1));
-                        currentSpot += numberToTurn;
-                    }
+                    currentSpot += turningAmount;
 
                     currentSpot = (currentSpot + 100) % 100;
 
