@@ -79,7 +79,6 @@ namespace _2025.Days
 
                 int TurnLeft(int turningAmount)
                 {
-                        
                     currentSpot -= turningAmount;
                     currentSpot = (currentSpot + 100) % 100;
 
@@ -91,7 +90,6 @@ namespace _2025.Days
                 int TurnRight(int turningAmount)
                 {
                     currentSpot += turningAmount;
-
                     currentSpot = (currentSpot + 100) % 100;
 
                     if (currentSpot == 0) total++;
